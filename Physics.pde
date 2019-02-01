@@ -17,7 +17,7 @@ class Physics {
     
     for(int i = 0; i < colliders.size(); i++) {
       for(int k = i; k < colliders.size(); k++) {
-        if(colliders.get(i).getCollision(colliders.get(k))) {
+        if(colliders.get(i).getCollision(colliders.get(k).getBox())) {
           colliders.get(i).collidedObject = colliders.get(k).getBox();
           colliders.get(k).collidedObject = colliders.get(i).getBox();
         }

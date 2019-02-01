@@ -1,10 +1,11 @@
+
 abstract class GameObject{
-  private int xCord;
-  private int yCord;
-  private int objectWidth;
-  private int objectHeight;
-  private Physics p;
-  private ArrayList<Collider> colliders;
+  public int xCord;
+  public int yCord;
+  public int objectWidth;
+  public int objectHeight;
+  public Physics p;
+  public ArrayList<Collider> colliders;
   
   public GameObject(int x, int y, Physics p) {
     xCord = x;

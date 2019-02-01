@@ -11,6 +11,8 @@ class WallObject extends GameObject{
   
   public WallObject(int x, int y, Physics p){
     super(x, y, p);
+    objectWidth = 32;
+    objectHeight = 32
   }
   
   public void display(){

@@ -1,4 +1,5 @@
 import java.awt.Rectangle;
+
 class Collider{
   private int xCord;
   private int yCord;

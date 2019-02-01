@@ -7,7 +7,7 @@ class Collider{
   private int collideHeight;
   public boolean isCollided;
   public Rectangle collidedObject;
-  Rectangle collisionBox = new Rectangle();
+  Rectangle collisionBox;
   
   public Collider(int x, int y, int w, int h)
   {
@@ -17,6 +17,11 @@ class Collider{
     collideHeight = h;
     isCollided = false;
     collidedObject = null;
+    collisionBox = new Rectangle(x, y, w, h);
+  }
+  
+  public void display() {
+    rect(xCord, yCord, collideWidth, collideHeight);
   }
   
   public Rectangle getBox(){
@@ -64,6 +69,13 @@ class Collider{
 
   public boolean getCollision(Rectangle r)
   {
-    return collisionBox.intersects(r);
+    if (collisionBox.intersects(r)){
+           System.out.println("Intersected");
+           return collisionBox.intersects(r);
+    }
+    else
+    {
+           return false; 
+    }
 } //<>//
 }

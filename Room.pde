@@ -1,5 +1,5 @@
 class Room{
-private boolean active = true; //State of the room. true = time still counting down. False = room complete, time frozen. 
+//private boolean active = true; //State of the room. true = time still counting down. False = room complete, time frozen. 
 private float timer = 10;
 private int roomType;
 private Physics p;
@@ -11,7 +11,7 @@ private int[][] ezRoomLayout = {
       {1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
       {1,0,0,1,1,1,0,1,1,1,0,0,0,0,1},
       {1,0,0,0,0,1,0,1,0,1,0,0,0,0,1},
-      {1,0,0,1,1,1,0,1,0,1,0,0,0,0,1},
+      {1,0,0,1,1,1,0,1,1,1,0,0,0,0,1},
       {1,0,0,0,0,1,0,1,0,1,0,0,0,0,1},
       {1,0,0,1,1,1,0,1,1,1,0,0,0,0,1},
       {1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
@@ -46,8 +46,40 @@ void run(){
 //     bobby.setAlive(false);
 //  }
   
-//  timer -= 10/framerate; //Counts down in a way so that no matter the framerate 10 in-game seconds = 10 real seconds
-  image(backgroundGreen, 0, 0, 480,480);
+  timer -= 1/framerate; //Counts down in a way so that no matter the framerate 10 in-game seconds = 10 real seconds
+ // System.out.println(timer);
+  if(roomType == 0){
+    if(timer > 9){
+      image(backgroundGreen1, 0, 0, 480,480);
+    }
+    else if(timer > 8){
+      image(backgroundGreen2, 0, 0, 480,480);
+    }
+    else if(timer > 7){
+      image(backgroundGreen3, 0, 0, 480,480);
+    }
+    else if(timer > 6){
+      image(backgroundGreen4, 0, 0, 480,480);
+    }
+    else if(timer > 5){
+      image(backgroundGreen5, 0, 0, 480,480);
+    }
+    else if(timer > 4){
+      image(backgroundGreen6, 0, 0, 480,480);
+    }
+    else if(timer > 3){
+      image(backgroundGreen7, 0, 0, 480,480);
+    }
+    else if(timer > 2){
+      image(backgroundGreen8, 0, 0, 480,480);
+    }
+    else if(timer > 1){
+      image(backgroundGreen9, 0, 0, 480,480);
+    }
+    else{
+      image(backgroundGreen10, 0, 0, 480, 480);
+    }
+   }
   
   for(int i = 0; i < 15; i++){
    for(int j = 0; j < 15; j++){

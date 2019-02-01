@@ -25,7 +25,9 @@ class Player {
   }
   
   public void display() {
+    
     collider.update(x, y);
+    p.update();
     updateCollider();
     fill(c.r, c.g, c.b);
     rect(x, y, w, h);
@@ -38,14 +40,18 @@ class Player {
   
   public void updateCollider() {
     if(collider.collidedObject != null) {
-      if(left)
+      if(left){
         x = clamp(x, collider.collidedObject.getX() + collider.collidedObject.getWidth(), 480);
-      if(right)
-        x = clamp(x, 0, collider.collidedObject.getX());
+        System.out.println("left clamped");
+      }
+      if(right){
+        x = clamp(x, 0, collider.collidedObject.getX() - w);
+        System.out.println("right clamped");
+      }
       if(down)
-        y  = clamp(y, collider.collidedObject.getY() + collider.collidedObject.getHeight(), 480);
+        y  = clamp(y, 0, collider.collidedObject.getY() - h);
       if(up)
-        y = clamp(y, 0, collider.collidedObject.getY());
+        y = clamp(y, collider.collidedObject.getY() + collider.collidedObject.getHeight(), 480);
     }
   }
   

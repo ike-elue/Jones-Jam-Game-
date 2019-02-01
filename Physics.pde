@@ -3,7 +3,7 @@ class Physics {
   private ArrayList<Collider> colliders;
   
   public Physics() {
-    colliders = new ArrayList<>();
+    colliders = new ArrayList();
   }
   
   public void addCollider(Collider c){

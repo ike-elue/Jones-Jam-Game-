@@ -62,8 +62,8 @@ class Collider{
     collisionBox.setRect(xCord, yCord, collideWidth, collideHeight);
 }
 
-  public boolean getCollision(Rectangle r);
+  public boolean getCollision(Rectangle r)
   {
-    return collisionBox.intersect(r);
+    return collisionBox.intersects(r);
 } //<>//
 }

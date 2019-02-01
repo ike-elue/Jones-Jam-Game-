@@ -1,4 +1,3 @@
-
 abstract class GameObject{
   public int xCord;
   public int yCord;
@@ -13,10 +12,10 @@ abstract class GameObject{
     objectWidth = 32;
     objectHeight = 32;
     this.p = p; 
-    colliders = new ArrayList<>();
+    colliders = new ArrayList<Collider>();
   }
   
-  abstract void display()
+  abstract void display();
   
   public void addCollider(Collider c) {
     colliders.add(c);

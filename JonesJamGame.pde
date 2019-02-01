@@ -6,7 +6,7 @@ public int framerate = 60;
 Physics p = new Physics();
 Room coolRoom = new Room(p);
 Color bobbyColor = new Color(37,38,39);
-Player bobby = new Player(240.0,240.0, 30.0,30.0, 3, bobbyColor);
+Player bobby = new Player(290,290,30,30,3, bobbyColor, p);
 
 PImage backgroundGreen;
 PImage backgroundRed;
@@ -25,6 +25,26 @@ void setup(){
   
 }
 
+ public void keyPressed() {
+    if(key == 'W') {
+      bobby.y -= bobby.speed;
+      bobby.up = true;
+    }
+    if(key == 'S') {
+      bobby.y += bobby.speed;
+      bobby.down = true;
+    }
+    if(key == 'D') {
+      bobby.x += bobby.speed;
+      bobby.right = true;
+    }
+    if(key == 'A') {
+      bobby.x -= bobby.speed;
+      bobby.left = true;
+    }
+  }
+
 void draw(){
   coolRoom.run();
+  bobby.display();
 }

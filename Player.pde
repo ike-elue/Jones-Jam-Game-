@@ -1,13 +1,13 @@
 class Player {
 
-  private int x, y;
+  public int x, y;
   private int w, h;
-  private int speed;
+  public int speed;
   private Color c;
   private boolean alive;
   private Collider collider;
   
-  private boolean left, right, down, up;
+  public boolean left, right, down, up;
   
   public Player(int x, int y, int w, int h, int speed, Color c, Physics p) {
     this.x = x;
@@ -25,7 +25,6 @@ class Player {
   }
   
   public void display() {
-    move();
     collider.update(x, y);
     updateCollider();
     fill(c.r, c.g, c.b);
@@ -35,25 +34,6 @@ class Player {
     right = false;
     down = false;
     up = false;
-  }
-  
-  public void move() {
-    if(key == 'W' && keyPressed == true) {
-      y -= speed;
-      up = true;
-    }
-    if(key == 'S' && keyPressed == true) {
-      y += speed;
-      down = true;
-    }
-    if(key == 'D' && keyPressed == true) {
-      x += speed;
-      right = true;
-    }
-    if(key == 'A' && keyPressed == true) {
-      x -= speed;
-      left = true;
-    }
   }
   
   public void updateCollider() {
@@ -69,11 +49,19 @@ class Player {
     }
   }
   
-  public float clamp(float var, float minVar, float maxVar) {
+  public int clamp(int var, int minVar, int maxVar) {
     if(var < minVar)
       return minVar;
     if(var > maxVar)
       return maxVar;
+    return var;
+  }
+  
+  public int clamp(int var, double minVar, double maxVar) {
+    if(var < minVar)
+      return (int) minVar;
+    if(var > maxVar)
+      return(int) maxVar;
     return var;
   }
   

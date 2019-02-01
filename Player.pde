@@ -5,6 +5,8 @@ class Player {
   private float w, h;
   private float speed;
   private Color c;
+  private float health;
+  private boolean alive;
   
   public Player(float x, float y, float w, float h, float speed, Color c) {
     this.camX = 0;
@@ -26,6 +28,14 @@ class Player {
   public void move() {
     x += speed;
     y += speed;
+  }
+  
+  public boolean isAlive() {
+    return alive;
+  }
+  
+  public void setAlive(boolean alive) {
+    this.alive = alive;
   }
   
 }

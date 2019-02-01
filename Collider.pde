@@ -43,16 +43,16 @@ class Collider{
    return xCord; 
   }
   
-  public int getX(){
-   return xCord; 
+  public int getY(){
+   return yCord; 
   }
   
-  public int getX(){
-   return xCord; 
+  public int getHeight(){
+   return collideHeight; 
   }
   
-  public int getX(){
-   return xCord; 
+  public int getWidth(){
+   return collideWidth; 
   }
   
   

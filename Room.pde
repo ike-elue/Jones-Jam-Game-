@@ -7,19 +7,19 @@ private Physics p;
 
 private int[][] ezRoomLayout = {
       {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}, 
-      {1,0,0,0,0,0,0,0,0,0,0,0,0,0,1}, 
-      {1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-      {1,0,0,1,1,1,0,1,1,1,0,0,0,0,1},
-      {1,0,0,0,0,1,0,1,0,1,0,0,0,0,1},
-      {1,0,0,1,1,1,0,1,1,1,0,0,0,0,1},
-      {1,0,0,0,0,1,0,1,0,1,0,0,0,0,1},
-      {1,0,0,1,1,1,0,1,1,1,0,0,0,0,1},
-      {1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-      {1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-      {1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-      {1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-      {1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-      {1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+      {1,0,1,0,0,0,0,0,0,0,1,0,0,0,1}, 
+      {1,0,1,0,0,0,0,0,0,0,1,0,1,0,1},
+      {1,0,0,0,1,1,1,1,1,0,1,0,1,0,1},
+      {1,1,1,0,1,0,0,0,1,0,1,0,1,0,1},
+      {1,3,1,0,1,0,0,0,1,0,1,0,1,0,1},
+      {1,0,1,0,1,0,0,0,1,0,1,0,1,0,1},
+      {1,0,1,1,1,1,0,0,1,0,1,0,1,0,1},
+      {1,0,1,0,0,0,0,0,1,0,0,0,1,0,1},
+      {1,0,1,0,0,0,1,0,1,1,1,1,1,0,1},
+      {1,0,1,0,1,0,1,1,0,0,0,0,0,0,1},
+      {1,0,0,0,1,0,0,1,0,1,1,1,1,1,1},
+      {1,1,1,1,1,0,0,0,0,0,0,0,0,0,1},
+      {1,0,0,0,0,0,0,0,1,1,1,1,1,0,1},
       {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1} };
 
 
@@ -53,31 +53,31 @@ void run(){
       image(backgroundGreen1, 0, 0, 480,480);
     }
     else if(timer > 8){
-      image(backgroundGreen2, 0, 0, 480,480);
+      image(backgroundGreen1, 0, 0, 480,480);
     }
     else if(timer > 7){
-      image(backgroundGreen3, 0, 0, 480,480);
+      image(backgroundGreen1, 0, 0, 480,480);
     }
     else if(timer > 6){
-      image(backgroundGreen4, 0, 0, 480,480);
+      image(backgroundGreen1, 0, 0, 480,480);
     }
     else if(timer > 5){
-      image(backgroundGreen5, 0, 0, 480,480);
+      image(backgroundGreen1, 0, 0, 480,480);
     }
     else if(timer > 4){
-      image(backgroundGreen6, 0, 0, 480,480);
+      image(backgroundGreen1, 0, 0, 480,480);
     }
     else if(timer > 3){
-      image(backgroundGreen7, 0, 0, 480,480);
+      image(backgroundGreen1, 0, 0, 480,480);
     }
     else if(timer > 2){
-      image(backgroundGreen8, 0, 0, 480,480);
+      image(backgroundGreen1, 0, 0, 480,480);
     }
     else if(timer > 1){
-      image(backgroundGreen9, 0, 0, 480,480);
+      image(backgroundGreen1, 0, 0, 480,480);
     }
     else{
-      image(backgroundGreen10, 0, 0, 480, 480);
+      image(backgroundGreen1, 0, 0, 480, 480);
     }
    }
   
@@ -100,6 +100,11 @@ void run(){
            GameObject object = new WallObject(32*i, 32*j, p);
            temp2DArray[j][i] = object;
          }
+         if(thingy[j][i] == 3){
+           GameObject object = new OrbSwitch(32*i, 32*j, p);
+           temp2DArray[j][i] = object;
+         }
+         
        }
      }
    }

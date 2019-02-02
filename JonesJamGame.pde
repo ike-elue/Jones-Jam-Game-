@@ -3,10 +3,11 @@ public int greenRoom = 0;
 public int redRoom = 1;
 public int purpleRoom = 2;
 public float framerate = 60;
+public boolean switchState = false;
 Physics p = new Physics();
 Room coolRoom = new Room(p);
 Color bobbyColor = new Color(37,38,39);
-Player bobby = new Player(32,32,30,30, 8, bobbyColor, p);
+Player bobby = new Player(32,32,30,30, 16, bobbyColor, p);
 
 PImage backgroundGreen1;
 PImage backgroundGreen2;
@@ -21,6 +22,9 @@ PImage backgroundGreen10;
 
 PImage backgroundRed;
 PImage backgroundPurple;
+
+PImage david;
+PImage orbSprite;
 PImage sprite;
 
 
@@ -35,6 +39,9 @@ void setup(){
   backgroundGreen8 = loadImage("backgroundGreen8.png");
   backgroundGreen9 = loadImage("backgroundGreen9.png");
   backgroundGreen10 = loadImage("backgroundGreen10.png");
+  
+  orbSprite = loadImage("Thing.png");
+  david = loadImage("AANGPC.png");
 
   
    sprite = loadImage("wallTile_Red.png");
